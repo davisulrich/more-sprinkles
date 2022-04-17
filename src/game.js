@@ -2,7 +2,17 @@ import Paddle from "/src/paddle";
 import InputHandler from "/src/input";
 import Ball from "/src/ball";
 import Brick from "/src/brick";
-import { buildLevel, level1, level2, level3 } from "/src/levels";
+import {
+  buildLevel,
+  level1,
+  level2,
+  level3,
+  level4,
+  level5,
+  level6,
+  level7,
+  level8
+} from "/src/levels";
 
 const GAME_STATE = {
   PAUSED: 0,
@@ -22,7 +32,16 @@ export default class Game {
     this.gameObjects = [];
     this.lives = 3;
     this.bricks = [];
-    this.levels = [level1, level2, level3];
+    this.levels = [
+      level1,
+      level2,
+      level3,
+      level4,
+      level5,
+      level6,
+      level7,
+      level8
+    ];
     this.currentLevel = 0;
 
     new InputHandler(this.paddle, this);
@@ -109,6 +128,13 @@ export default class Game {
         this.gameWidth / 2,
         this.gameHeight / 2 + 150
       );
+
+      context.font = "15px Arial";
+      context.fillText(
+        "Instructions: You have 3 lives. Use < and > to move. ESC to pause.",
+        this.gameWidth / 2,
+        this.gameHeight / 2 + 170
+      );
       context.drawImage(
         document.getElementById("img_icecream"),
         this.gameWidth / 2 - 30,
@@ -141,11 +167,7 @@ export default class Game {
       context.font = "30px Arial";
       context.fillStyle = "white";
       context.textAlign = "center";
-      context.fillText(
-        "Game Won! So Proud of You!",
-        this.gameWidth / 2,
-        this.gameHeight / 2
-      );
+      context.fillText("You Win!", this.gameWidth / 2, this.gameHeight / 2);
     }
   }
 
