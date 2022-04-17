@@ -65,7 +65,8 @@ export default class Game {
     if (
       this.gamestate === GAME_STATE.PAUSED ||
       this.gamestate === GAME_STATE.MENU ||
-      this.gamestate === GAME_STATE.GAMEOVER
+      this.gamestate === GAME_STATE.GAMEOVER ||
+      this.gamestate === GAME_STATE.GAMEWON
     )
       return;
 
@@ -163,11 +164,21 @@ export default class Game {
       context.fillStyle = "green";
       context.rect(0, 0, this.gameWidth, this.gameHeight);
       context.fill();
-
+      context.drawImage(
+        document.getElementById("img_mittens"),
+        this.gameWidth / 2 - 100,
+        this.gameHeight / 2 - 150,
+        200,
+        250
+      );
       context.font = "30px Arial";
       context.fillStyle = "white";
       context.textAlign = "center";
-      context.fillText("You Win!", this.gameWidth / 2, this.gameHeight / 2);
+      context.fillText(
+        "You Win!",
+        this.gameWidth / 2,
+        this.gameHeight / 2 + 150
+      );
     }
   }
 
