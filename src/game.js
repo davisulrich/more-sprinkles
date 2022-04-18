@@ -99,10 +99,12 @@ export default class Game {
       this.gameWidth - 30,
       20
     );
+    context.font = "14px Arial";
+    context.fillStyle = "black";
     context.fillText(
-      "Lives Left: " + this.lives,
-      this.gamewidth - 30,
-      this.gameHeight - 30
+      "# Lives: " + this.lives,
+      this.gameWidth - 40,
+      this.gameHeight - 12.5
     );
 
     if (this.gamestate === GAME_STATE.PAUSED) {
