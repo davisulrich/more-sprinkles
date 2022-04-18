@@ -99,6 +99,11 @@ export default class Game {
       this.gameWidth - 30,
       20
     );
+    context.fillText(
+      "Lives Left: " + this.lives,
+      this.gamewidth - 30,
+      this.gameHeight - 30
+    );
 
     if (this.gamestate === GAME_STATE.PAUSED) {
       context.rect(0, 0, this.gameWidth, this.gameHeight);
@@ -116,34 +121,35 @@ export default class Game {
       context.rect(0, 0, this.gameWidth, this.gameHeight);
       context.fill();
 
-      context.font = "30px Arial";
+      context.font = "38px Playfair Display";
       context.fillStyle = "yellow";
       context.textAlign = "center";
       context.fillText(
-        "Welcome to Ice Cream with Extra Sprinkles",
+        "Welcome to More Sprinkles!",
         this.gameWidth / 2,
-        this.gameHeight / 2 + 50
+        this.gameHeight / 2 + 40
       );
       context.font = "24px Arial";
       context.fillStyle = "pink";
       context.fillText(
-        "A Game by Davis Ulrich",
+        "A game by Davis Ulrich",
         this.gameWidth / 2,
-        this.gameHeight / 2 + 100
+        this.gameHeight / 2 + 75
       );
-      context.font = "30px Arial";
+      context.font = "26px Arial";
       context.fillStyle = "white";
       context.fillText(
         "Press SPACEBAR to Start",
         this.gameWidth / 2,
-        this.gameHeight / 2 + 150
+        this.gameHeight / 2 + 130
       );
 
-      context.font = "15px Arial";
+      context.font = "20px Arial";
+      context.fillStyle = "orange";
       context.fillText(
-        "Instructions: You have 3 lives. Use < and > to move. ESC to pause.",
+        "You have 3 lives --- Use < and > to move --- ESC to pause",
         this.gameWidth / 2,
-        this.gameHeight / 2 + 170
+        this.gameHeight / 2 + 165
       );
       context.drawImage(
         document.getElementById("img_icecream"),
