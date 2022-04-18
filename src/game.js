@@ -91,6 +91,15 @@ export default class Game {
       object.draw(context)
     );
 
+    // write level at the top
+    context.font = "14px Arial";
+    context.fillStyle = "black";
+    context.fillText(
+      "Level " + (this.currentLevel + 1),
+      this.gameWidth - 30,
+      20
+    );
+
     if (this.gamestate === GAME_STATE.PAUSED) {
       context.rect(0, 0, this.gameWidth, this.gameHeight);
       context.fillStyle = "rgba(100, 100, 0, 0.5)";
@@ -153,11 +162,7 @@ export default class Game {
       context.font = "30px Arial";
       context.fillStyle = "white";
       context.textAlign = "center";
-      context.fillText(
-        "Jayde Eats Poop",
-        this.gameWidth / 2,
-        this.gameHeight / 2
-      );
+      context.fillText("HA! LOSER", this.gameWidth / 2, this.gameHeight / 2);
     }
 
     if (this.gamestate === GAME_STATE.GAMEWON) {
@@ -175,7 +180,7 @@ export default class Game {
       context.fillStyle = "white";
       context.textAlign = "center";
       context.fillText(
-        "You Win!",
+        "You Win! High Five!",
         this.gameWidth / 2,
         this.gameHeight / 2 + 150
       );
