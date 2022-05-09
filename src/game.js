@@ -136,7 +136,7 @@ export default class Game {
       context.fillText(
         "A game by Davis Ulrich",
         this.gameWidth / 2,
-        this.gameHeight / 2 + 75
+        this.gameHeight / 2 + 82
       );
       context.font = "26px Arial";
       context.fillStyle = "white";
