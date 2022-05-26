@@ -1,3 +1,5 @@
+// youtube video: https://www.youtube.com/watch?v=3EMxBkqC4z0
+
 import Game from "/src/game";
 
 let canvas = document.getElementById("gameScreen");
