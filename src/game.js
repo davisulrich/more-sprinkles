@@ -127,7 +127,7 @@ export default class Game {
       context.fillStyle = "yellow";
       context.textAlign = "center";
       context.fillText(
-        "Welcome to More Sprinkles!",
+        "Welcome to Sprinkles!",
         this.gameWidth / 2,
         this.gameHeight / 2 + 40
       );
